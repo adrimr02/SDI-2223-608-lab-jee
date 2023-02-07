@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.List, es.uniovi.sdi.*" %>
 <jsp:useBean id="counter" class="es.uniovi.sdi.Counter" scope="application" />
 <jsp:setProperty name="counter" property="increase" value="1" />
 <html>
@@ -25,6 +24,9 @@
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="admin.jsp">Administrar productos<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="products">Productos<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <div class="nav navbar-right">
