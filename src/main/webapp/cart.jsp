@@ -31,10 +31,11 @@
   <div class="container" id="main-container">
     <h2>Vista Carrito</h2>
     <ul>
-      <c:forEach var="item" items="${selectedItems}">
-        <tr>
-          <li>${item.key} - ${item.value} </li>
-        </tr>
+      <c:forEach var="item" items="${session.getAttribute('cart')}">
+          <li>
+            ${item.key} - ${item.value}
+            <a href="RemoveFromCart?product=${item.key}">Eliminar</a>
+          </li>
       </c:forEach>
     </ul>
     <a href="index.jsp">Volver</a>

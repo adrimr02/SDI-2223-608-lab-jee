@@ -6,10 +6,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
-@WebServlet(name = "AddToShoppingCart", value = "/AddToShoppingCart")
-public class ServletShoppingCart extends HttpServlet {
+@WebServlet(name = "ServletRemoveFromCart", value = "/RemoveFromCart")
+public class ServletRemoveFromCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -22,22 +21,10 @@ public class ServletShoppingCart extends HttpServlet {
 
         String product = request.getParameter("product");
         if (product != null) {
-            addToShoppingCart(cart, product);
+            cart.remove(product);
         }
 
         getServletContext().getRequestDispatcher("/cart.jsp").forward(request, response);
-
-
-
-    }
-
-    private void addToShoppingCart(Map<String, Integer> cart, String productKey) {
-        if (cart.containsKey(productKey)) {
-            int productCount = cart.get(productKey);
-            cart.put(productKey, productCount + 1);
-        } else {
-            cart.put(productKey, 1);
-        }
     }
 
 }
