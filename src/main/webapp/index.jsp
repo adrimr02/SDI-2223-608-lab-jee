@@ -28,6 +28,9 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="products">Productos<span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="comments.jsp">Comentarios<span class="sr-only">(current)</span></a>
+                </li>
             </ul>
             <div class="nav navbar-right">
                 <jsp:getProperty name="counter" property="total" /> Visitas
